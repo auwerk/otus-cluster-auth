@@ -8,3 +8,5 @@ ingress:
   ingressClassName: nginx
   hostname: keycloak.arch.homework
   pathType: Prefix
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-buffer-size: "64k"
