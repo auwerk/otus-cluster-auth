@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="418a36da-61a4-4763-91c7-75a314cc0304" name="Changes" comment="Keycloak behind nginx-ingress">
+      <change afterPath="$PROJECT_DIR$/db/postgresql-values.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/resources.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-user/resources.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak/keycloak-values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/keycloak/keycloak-values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/namespaces.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/namespaces.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +35,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Devel/Otus/otus-cluster/helm-charts/demo-service/templates/ingress/user.yaml",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -44,7 +51,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1676919046323</updated>
-      <workItem from="1676919047616" duration="3398000" />
+      <workItem from="1676919047616" duration="3527000" />
+      <workItem from="1676966133973" duration="737000" />
+      <workItem from="1676994177369" duration="315000" />
+      <workItem from="1677600744666" duration="795000" />
+      <workItem from="1677601609833" duration="8000" />
+      <workItem from="1677602130256" duration="4049000" />
     </task>
     <task id="LOCAL-00001" summary="Keycloak behind nginx-ingress">
       <created>1676922457350</created>
@@ -53,7 +65,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676922457350</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Keycloak behind nginx-ingress">
+      <created>1676922486844</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1676922486844</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

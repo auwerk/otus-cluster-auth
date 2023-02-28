@@ -1,0 +1,67 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: otus-user
+  name: otus-service-user
+  labels:
+    app.kubernetes.io/name: otus-service-user
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: otus-service-user
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: otus-service-user
+    spec:
+      containers:
+        - name: otus-service-user
+          image: auwerk/otus-service-user:v1.0.1
+          ports:
+            - name: web
+              containerPort: 8080
+      initContainers:
+        - name: otus-service-user-db
+          image: auwerk/otus-service-user-db:v1.0.1
+          command: [ 'sh', '-c', 'liquibase --defaultsFile=/liquibase/changelog/liquibase.properties update' ]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: otus-user
+  name: otus-service-user
+  labels:
+    app.kubernetes.io/name: otus-service-user
+spec:
+  selector:
+    app.kubernetes.io/name: otus-service-user
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+      name: http
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: otus-user
+  name: otus-service-user
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: arch.homework
+      http:
+        paths:
+          - path: /user(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: otus-service-user
+                port:
+                  number: 80
