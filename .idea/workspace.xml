@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="418a36da-61a4-4763-91c7-75a314cc0304" name="Changes" comment="Keycloak behind nginx-ingress">
-      <change afterPath="$PROJECT_DIR$/db/postgresql-values.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/resources.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-user/resources.yaml" afterDir="false" />
+    <list default="true" id="418a36da-61a4-4763-91c7-75a314cc0304" name="Changes" comment="otus-service-user + db">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keycloak/keycloak-values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/keycloak/keycloak-values.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/namespaces.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/namespaces.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +51,7 @@
       <workItem from="1676994177369" duration="315000" />
       <workItem from="1677600744666" duration="795000" />
       <workItem from="1677601609833" duration="8000" />
-      <workItem from="1677602130256" duration="4049000" />
+      <workItem from="1677602130256" duration="4259000" />
     </task>
     <task id="LOCAL-00001" summary="Keycloak behind nginx-ingress">
       <created>1676922457350</created>
@@ -72,7 +67,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676922486844</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fixed proxy buffer size for Keycloak">
+      <created>1677607434248</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677607434248</updated>
+    </task>
+    <task id="LOCAL-00004" summary="otus-service-user + db">
+      <created>1677607487420</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1677607487420</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -91,6 +100,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Keycloak behind nginx-ingress" />
-    <option name="LAST_COMMIT_MESSAGE" value="Keycloak behind nginx-ingress" />
+    <MESSAGE value="Fixed proxy buffer size for Keycloak" />
+    <MESSAGE value="otus-service-user + db" />
+    <option name="LAST_COMMIT_MESSAGE" value="otus-service-user + db" />
   </component>
 </project>
