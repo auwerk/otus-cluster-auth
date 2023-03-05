@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: otus-service-user
-          image: auwerk/otus-service-user:v1.0.1
+          image: auwerk/otus-service-user:v1.0.2
           ports:
             - name: web
               containerPort: 8080
@@ -73,6 +73,7 @@ metadata:
   name: otus-service-user-profile
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /profile/$2
+    nginx.ingress.kubernetes.io/auth-url: "http://oauth2-proxy.security.svc.cluster.local:80/oauth2/auth"
 spec:
   ingressClassName: nginx
   rules:
