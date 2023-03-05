@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="418a36da-61a4-4763-91c7-75a314cc0304" name="Changes" comment="Separate ingress resources for user registration and other profile stuff">
+    <list default="true" id="418a36da-61a4-4763-91c7-75a314cc0304" name="Changes" comment="Update service version (set password on registration support)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oauth2-proxy/oauth2-proxy-values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/oauth2-proxy/oauth2-proxy-values.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-user/resources.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/resources.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +54,7 @@
       <workItem from="1677601609833" duration="8000" />
       <workItem from="1677602130256" duration="4516000" />
       <workItem from="1678013582588" duration="3572000" />
-      <workItem from="1678033564679" duration="32000" />
+      <workItem from="1678033564679" duration="1610000" />
     </task>
     <task id="LOCAL-00001" summary="Keycloak behind nginx-ingress">
       <created>1676922457350</created>
@@ -104,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678015752916</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Update service version (set password on registration support)">
+      <created>1678033850929</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1678033850929</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +136,7 @@
     <MESSAGE value="README updated" />
     <MESSAGE value="oauth2-proxy installation" />
     <MESSAGE value="Separate ingress resources for user registration and other profile stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Separate ingress resources for user registration and other profile stuff" />
+    <MESSAGE value="Update service version (set password on registration support)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update service version (set password on registration support)" />
   </component>
 </project>
