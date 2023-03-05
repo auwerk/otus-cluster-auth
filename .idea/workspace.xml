@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="418a36da-61a4-4763-91c7-75a314cc0304" name="Changes" comment="README updated">
-      <change afterPath="$PROJECT_DIR$/oauth2-proxy/oauth2-proxy-values.yaml" afterDir="false" />
+    <list default="true" id="418a36da-61a4-4763-91c7-75a314cc0304" name="Changes" comment="oauth2-proxy installation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/resources.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/resources.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +52,7 @@
       <workItem from="1677600744666" duration="795000" />
       <workItem from="1677601609833" duration="8000" />
       <workItem from="1677602130256" duration="4516000" />
-      <workItem from="1678013582588" duration="1083000" />
+      <workItem from="1678013582588" duration="2048000" />
     </task>
     <task id="LOCAL-00001" summary="Keycloak behind nginx-ingress">
       <created>1676922457350</created>
@@ -90,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677607547790</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="oauth2-proxy installation">
+      <created>1678014703200</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1678014703200</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,6 +118,7 @@
     <MESSAGE value="Fixed proxy buffer size for Keycloak" />
     <MESSAGE value="otus-service-user + db" />
     <MESSAGE value="README updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="README updated" />
+    <MESSAGE value="oauth2-proxy installation" />
+    <option name="LAST_COMMIT_MESSAGE" value="oauth2-proxy installation" />
   </component>
 </project>
