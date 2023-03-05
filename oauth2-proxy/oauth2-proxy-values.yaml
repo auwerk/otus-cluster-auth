@@ -1,0 +1,4 @@
+configuration:
+  clientID: otus-service-user
+  clientSecret: gHJJskTluHrSMF0NUwtdnKT3qehO838O
+  oidcIssuerUrl: http://keycloak.security/realms/otus
