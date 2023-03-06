@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="418a36da-61a4-4763-91c7-75a314cc0304" name="Changes" comment="Basic Traefik setup without auth">
+    <list default="true" id="418a36da-61a4-4763-91c7-75a314cc0304" name="Changes" comment="Removed oatuh2-proxy directory">
+      <change afterPath="$PROJECT_DIR$/frontend-user/ingress.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-user/resources.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/ingress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/ingress.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,19 +33,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Devel/Otus/otus-cluster/helm-charts/demo-service/templates/ingress/user.yaml&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Devel/Otus/otus-cluster/helm-charts/demo-service/templates/ingress/user.yaml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -59,7 +64,8 @@
       <workItem from="1677602130256" duration="4516000" />
       <workItem from="1678013582588" duration="3572000" />
       <workItem from="1678033564679" duration="4546000" />
-      <workItem from="1678047442800" duration="1073000" />
+      <workItem from="1678047442800" duration="2977000" />
+      <workItem from="1678078841270" duration="4269000" />
     </task>
     <task id="LOCAL-00001" summary="Keycloak behind nginx-ingress">
       <created>1676922457350</created>
@@ -131,7 +137,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678048455659</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Basic Traefik setup without auth">
+      <created>1678048538101</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1678048538101</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Removed oatuh2-proxy directory">
+      <created>1678048574568</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1678048574568</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +178,7 @@
     <MESSAGE value="Update service version (set password on registration support)" />
     <MESSAGE value="oauth2 config still fails" />
     <MESSAGE value="Basic Traefik setup without auth" />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic Traefik setup without auth" />
+    <MESSAGE value="Removed oatuh2-proxy directory" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed oatuh2-proxy directory" />
   </component>
 </project>

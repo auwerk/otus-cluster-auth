@@ -2,55 +2,26 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
 metadata:
-  name: otus-service-user-register-prp
+  name: otus-service-user-prp
   namespace: otus-user
 spec:
   replacePathRegex:
-    regex: ^/user/register(/|$)
-    replacement: /register
----
-apiVersion: traefik.containo.us/v1alpha1
-kind: Middleware
-metadata:
-  name: otus-service-user-profile-prp
-  namespace: otus-user
-spec:
-  replacePathRegex:
-    regex: ^/user/profile(/|$)(.*)
-    replacement: /profile/$2
+    regex: ^/api/user(/|$)(.*)
+    replacement: /$2
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: otus-service-user-register
+  name: otus-service-user
   namespace: otus-user
 spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`arch.homework`) && PathPrefix(`/user/register`)
+    - match: Host(`arch.homework`) && PathPrefix(`/api/user`)
       kind: Rule
       middlewares:
-        - name: otus-service-user-register-prp
-          namespace: otus-user
-      services:
-        - name: otus-service-user
-          namespace: otus-user
-          port: 80
----
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
-  name: otus-service-user-profile
-  namespace: otus-user
-spec:
-  entryPoints:
-    - web
-  routes:
-    - match: Host(`arch.homework`) && PathPrefix(`/user/profile`)
-      kind: Rule
-      middlewares:
-        - name: otus-service-user-profile-prp
+        - name: otus-service-user-prp
           namespace: otus-user
       services:
         - name: otus-service-user

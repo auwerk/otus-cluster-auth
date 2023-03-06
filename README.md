@@ -32,3 +32,9 @@ helm install postgresql -f ./db/postgresql-values.yaml bitnami/postgresql --name
 kubectl apply -f ./service-user/resources.yaml
 kubectl apply -f ./service-user/ingress.yaml
 ```
+
+- Установка UI:
+```shell
+kubectl apply -f ./frontend-user/resources.yaml
+kubectl apply -f ./frontend-user/ingress.yaml
+```

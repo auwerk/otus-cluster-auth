@@ -1,0 +1,16 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: otus-frontend-user
+  namespace: otus-user
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`arch.homework`) && PathPrefix(`/user`)
+      kind: Rule
+      services:
+        - name: otus-frontend-user
+          namespace: otus-user
+          port: 80
