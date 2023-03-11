@@ -6,6 +6,8 @@ metadata:
   name: otus-service-user-api
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/auth-url: "http://$host/oauth2/auth"
+    nginx.ingress.kubernetes.io/auth-response-headers: "Authorization"
 spec:
   ingressClassName: nginx
   rules:

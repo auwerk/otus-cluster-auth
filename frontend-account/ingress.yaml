@@ -4,6 +4,9 @@ kind: Ingress
 metadata:
   namespace: otus-user
   name: otus-frontend-account
+  annotations:
+    nginx.ingress.kubernetes.io/auth-url: "http://$host/oauth2/auth"
+    nginx.ingress.kubernetes.io/auth-signin: "http://$host/oauth2/start?rd=$escaped_request_uri"
 spec:
   ingressClassName: nginx
   rules:

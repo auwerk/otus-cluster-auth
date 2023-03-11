@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="418a36da-61a4-4763-91c7-75a314cc0304" name="Changes" comment="Final attempt at traefik">
+    <list default="true" id="418a36da-61a4-4763-91c7-75a314cc0304" name="Changes" comment="Reconfiguration with nginx-ingress, step 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend-account/ingress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-account/ingress.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/namespaces.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/namespaces.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oauth2-proxy/ingress.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak/keycloak-values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/keycloak/keycloak-values.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oauth2-proxy/oauth2-proxy-values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/oauth2-proxy/oauth2-proxy-values.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-user/ingress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/ingress.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/traefik/traefik-values.yaml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +76,7 @@
       <workItem from="1678338193707" duration="12459000" />
       <workItem from="1678360242973" duration="3029000" />
       <workItem from="1678538127508" duration="104000" />
-      <workItem from="1678538246884" duration="4416000" />
+      <workItem from="1678538246884" duration="6961000" />
     </task>
     <task id="LOCAL-00001" summary="Keycloak behind nginx-ingress">
       <created>1676922457350</created>
@@ -193,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678541530111</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Reconfiguration with nginx-ingress, step 1">
+      <created>1678543497811</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1678543497811</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +229,7 @@
     <MESSAGE value="Added UI, cleaned up mess in ingress routes" />
     <MESSAGE value="UI version bump" />
     <MESSAGE value="Final attempt at traefik" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final attempt at traefik" />
+    <MESSAGE value="Reconfiguration with nginx-ingress, step 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reconfiguration with nginx-ingress, step 1" />
   </component>
 </project>

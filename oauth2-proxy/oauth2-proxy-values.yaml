@@ -5,7 +5,6 @@ config:
   cookieName: "otus-auth"
   configFile: |
     reverse_proxy = true
-    set_xauthrequest = true
     code_challenge_method = "S256"
     provider = "keycloak-oidc"
     redirect_url = "http://arch.homework/oauth2/callback"
@@ -13,6 +12,8 @@ config:
     insecure_oidc_skip_issuer_verification = true
     email_domains = [ "*" ]
     cookie_secure = false
+    silence_ping_logging = true
+    set_authorization_header = true
 sessionStorage:
   type: redis
 redis:
