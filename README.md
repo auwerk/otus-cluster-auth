@@ -11,9 +11,9 @@ helm install cert-manager jetstack/cert-manager --set installCRDs=true --namespa
 kubectl apply -f ./cert-manager/resources.yaml
 ```
 
-- Установка Traefik:
+- Установка nginx-ingress-controller:
 ```shell
-helm install traefik traefik/traefik --namespace traefik
+helm install nginx-ingress ingress-nginx/ingress-nginx --namespace nginx-ic
 ```
 
 - Установка Keycloak
@@ -24,7 +24,6 @@ helm install keycloak bitnami/keycloak -f ./keycloak/keycloak-values.yaml --name
 - Установка oauth2-proxy
 ```shell
 helm install oauth2-proxy oauth2-proxy/oauth2-proxy -f ./oauth2-proxy/oauth2-proxy-values.yaml --namespace rev-proxy
-kubectl apply -f .\oauth2-proxy\ingress.yaml
 ```
 
 - Установка PostgreSQL для сервиса:

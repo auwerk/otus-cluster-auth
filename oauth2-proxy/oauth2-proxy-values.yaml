@@ -17,3 +17,9 @@ sessionStorage:
   type: redis
 redis:
   enabled: true
+ingress:
+  enabled: true
+  className: nginx
+  path: /oauth2
+  hosts:
+    - arch.homework

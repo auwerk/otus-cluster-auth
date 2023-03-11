@@ -1,29 +1,19 @@
 ---
-apiVersion: traefik.containo.us/v1alpha1
-kind: Middleware
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
-  name: otus-frontend-account-fa
   namespace: otus-user
-spec:
-  forwardAuth:
-    address: http://oauth2-proxy.rev-proxy/auth
-    trustForwardHeader: true
----
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
   name: otus-frontend-account
-  namespace: otus-user
 spec:
-  entryPoints:
-    - web
-  routes:
-    - match: Host(`arch.homework`) && PathPrefix(`/account`)
-      kind: Rule
-#      middlewares:
-#        - name: otus-frontend-account-fa
-#          namespace: otus-user
-      services:
-        - name: otus-frontend-account
-          namespace: otus-user
-          port: 80
+  ingressClassName: nginx
+  rules:
+    - host: arch.homework
+      http:
+        paths:
+          - backend:
+              service:
+                name: otus-frontend-account
+                port:
+                  name: http
+            pathType: Prefix
+            path: /account
