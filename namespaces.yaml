@@ -12,4 +12,9 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
+  name: rev-proxy
+---
+apiVersion: v1
+kind: Namespace
+metadata:
   name: otus-user

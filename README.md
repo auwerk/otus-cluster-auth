@@ -21,6 +21,12 @@ helm install traefik traefik/traefik --namespace traefik
 helm install keycloak bitnami/keycloak -f ./keycloak/keycloak-values.yaml --namespace security
 ```
 
+- Установка oauth2-proxy
+```shell
+helm install oauth2-proxy oauth2-proxy/oauth2-proxy -f ./oauth2-proxy/oauth2-proxy-values.yaml --namespace rev-proxy
+kubectl apply -f .\oauth2-proxy\ingress.yaml
+```
+
 - Установка PostgreSQL для сервиса:
 ```shell
 kubectl apply -f ./db/resources.yaml

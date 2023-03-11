@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="418a36da-61a4-4763-91c7-75a314cc0304" name="Changes" comment="Added UI, cleaned up mess in ingress routes">
+    <list default="true" id="418a36da-61a4-4763-91c7-75a314cc0304" name="Changes" comment="UI version bump">
+      <change afterPath="$PROJECT_DIR$/oauth2-proxy/ingress.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oauth2-proxy/oauth2-proxy-values.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/traefik/traefik-values.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-user/resources.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-user/resources.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-user/ingress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-account/ingress.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-user/resources.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-account/resources.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/namespaces.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/namespaces.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/resources.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/resources.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +28,10 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiPersistence">
+    <option name="allNamespaces" value="true" />
+    <option name="context" value="minikube" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -30,21 +41,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Devel/Otus/otus-cluster/helm-charts/demo-service/templates/ingress/user.yaml&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Devel/Otus/otus-cluster/helm-charts/demo-service/templates/ingress/user.yaml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.intellij.kubernetes.view.ui.settings.KubernetesViewConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -64,7 +75,12 @@
       <workItem from="1678047442800" duration="2977000" />
       <workItem from="1678078841270" duration="4332000" />
       <workItem from="1678088482860" duration="64000" />
-      <workItem from="1678089265767" duration="2204000" />
+      <workItem from="1678089265767" duration="2337000" />
+      <workItem from="1678297191285" duration="639000" />
+      <workItem from="1678338193707" duration="12459000" />
+      <workItem from="1678360242973" duration="3029000" />
+      <workItem from="1678538127508" duration="104000" />
+      <workItem from="1678538246884" duration="1914000" />
     </task>
     <task id="LOCAL-00001" summary="Keycloak behind nginx-ingress">
       <created>1676922457350</created>
@@ -164,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678087019553</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="UI version bump">
+      <created>1678102235585</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1678102235585</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,6 +217,7 @@
     <MESSAGE value="Removed oatuh2-proxy directory" />
     <MESSAGE value="Added UI, removed mess from ingress routes" />
     <MESSAGE value="Added UI, cleaned up mess in ingress routes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added UI, cleaned up mess in ingress routes" />
+    <MESSAGE value="UI version bump" />
+    <option name="LAST_COMMIT_MESSAGE" value="UI version bump" />
   </component>
 </project>

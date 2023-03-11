@@ -1,0 +1,19 @@
+config:
+  clientID: "otus-service-user"
+  clientSecret: "tlDTc1VyLLdXcsreWKSUUlmCg67gUcIh"
+  cookieSecret: "azNlbzBFZ1dSMWZHT1c3bkVPNXBKaXA0WGtNSXdYdUk="
+  cookieName: "otus-auth"
+  configFile: |
+    reverse_proxy = true
+    set_xauthrequest = true
+    code_challenge_method = "S256"
+    provider = "keycloak-oidc"
+    redirect_url = "http://arch.homework/oauth2/callback"
+    oidc_issuer_url = "http://keycloak.security/realms/otus"
+    insecure_oidc_skip_issuer_verification = true
+    email_domains = [ "*" ]
+    cookie_secure = false
+sessionStorage:
+  type: redis
+redis:
+  enabled: true

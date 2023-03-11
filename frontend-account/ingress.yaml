@@ -1,0 +1,29 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: otus-frontend-account-fa
+  namespace: otus-user
+spec:
+  forwardAuth:
+    address: http://oauth2-proxy.rev-proxy/auth
+    trustForwardHeader: true
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: otus-frontend-account
+  namespace: otus-user
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`arch.homework`) && PathPrefix(`/account`)
+      kind: Rule
+#      middlewares:
+#        - name: otus-frontend-account-fa
+#          namespace: otus-user
+      services:
+        - name: otus-frontend-account
+          namespace: otus-user
+          port: 80

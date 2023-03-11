@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: otus-service-user
-          image: auwerk/otus-service-user:v1.0.2
+          image: auwerk/otus-service-user:v1.0.3
           ports:
             - name: web
               containerPort: 8080

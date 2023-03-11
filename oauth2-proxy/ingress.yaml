@@ -1,0 +1,15 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: oauth2-proxy
+  namespace: rev-proxy
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`arch.homework`) && PathPrefix(`/oauth2`)
+      kind: Rule
+      services:
+        - name: oauth2-proxy
+          namespace: rev-proxy
+          port: 80
