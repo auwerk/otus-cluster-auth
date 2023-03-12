@@ -3,9 +3,30 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   namespace: otus-user
-  name: otus-service-user-api
+  name: otus-service-user-register
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/rewrite-target: /register/$2
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: arch.homework
+      http:
+        paths:
+          - backend:
+              service:
+                name: otus-service-user
+                port:
+                  name: http
+            pathType: Exact
+            path: /api/user/register(/|$)(.*)
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: otus-user
+  name: otus-service-user-profile
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /profile/$2
     nginx.ingress.kubernetes.io/auth-url: "http://$host/oauth2/auth"
     nginx.ingress.kubernetes.io/auth-response-headers: "Authorization"
 spec:
@@ -19,5 +40,5 @@ spec:
                 name: otus-service-user
                 port:
                   name: http
-            pathType: Prefix
-            path: /api/user(/|$)(.*)
+            pathType: Exact
+            path: /api/user/profile(/|$)(.*)
