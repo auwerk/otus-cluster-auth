@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="418a36da-61a4-4763-91c7-75a314cc0304" name="Changes" comment="Reconfiguration with nginx-ingress, step 2 (it works!)">
+    <list default="true" id="418a36da-61a4-4763-91c7-75a314cc0304" name="Changes" comment="Reconfiguration with nginx-ingress, step 3 (register API is now public)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-user/ingress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/ingress.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oauth2-proxy/oauth2-proxy-values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/oauth2-proxy/oauth2-proxy-values.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +75,8 @@
       <workItem from="1678538127508" duration="104000" />
       <workItem from="1678538246884" duration="6961000" />
       <workItem from="1678610099787" duration="2312000" />
-      <workItem from="1678630603836" duration="240000" />
+      <workItem from="1678630603836" duration="2084000" />
+      <workItem from="1678646861474" duration="502000" />
     </task>
     <task id="LOCAL-00001" summary="Keycloak behind nginx-ingress">
       <created>1676922457350</created>
@@ -196,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678543497811</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Reconfiguration with nginx-ingress, step 3 (register API is now public)">
+      <created>1678631047182</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1678631047182</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,6 +237,7 @@
     <MESSAGE value="UI version bump" />
     <MESSAGE value="Final attempt at traefik" />
     <MESSAGE value="Reconfiguration with nginx-ingress, step 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reconfiguration with nginx-ingress, step 1" />
+    <MESSAGE value="Reconfiguration with nginx-ingress, step 3 (register API is now public)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reconfiguration with nginx-ingress, step 3 (register API is now public)" />
   </component>
 </project>

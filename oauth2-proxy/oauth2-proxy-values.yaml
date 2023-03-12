@@ -14,6 +14,7 @@ config:
     cookie_secure = false
     silence_ping_logging = true
     set_authorization_header = true
+    skip_jwt_bearer_tokens = true
 sessionStorage:
   type: redis
 redis:
