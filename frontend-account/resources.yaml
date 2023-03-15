@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: otus-frontend-account
-          image: auwerk/otus-frontend-account:v1.0.0
+          image: auwerk/otus-frontend-account:v1.0.2
           ports:
             - name: web
               containerPort: 80

@@ -1,0 +1,723 @@
+{
+	"info": {
+		"_postman_id": "699c671b-4d03-4ef7-8e19-7303c4c8b16f",
+		"name": "Otus Auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register user1",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var rnd = Math.floor((Math.random() * 10000) + 1);\r",
+							"pm.collectionVariables.set(\"user1_username\", \"user\" + rnd);\r",
+							"pm.collectionVariables.set(\"user1_password\",  \"user-pass-\" + rnd);\r",
+							"pm.collectionVariables.set(\"user1_email\", \"user\" + rnd + \"@ya.ru\");\r",
+							"pm.collectionVariables.set(\"user1_firstName\", \"User\" + rnd);\r",
+							"pm.collectionVariables.set(\"user1_lastName\",  \"User\" + rnd + \"sky\");\r",
+							"pm.collectionVariables.set(\"user1_phoneNumber\",  rnd);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"{{user1_email}}\",\r\n    \"userName\": \"{{user1_username}}\",\r\n    \"firstName\": \"{{user1_firstName}}\",\r\n    \"lastName\": \"{{user1_lastName}}\",\r\n    \"birthDate\": \"1988-01-11\",\r\n    \"phoneNumber\": {{user1_phoneNumber}},\r\n    \"password\": \"{{user1_password}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/api/user/register",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"api",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check no access w/o auth",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 401\", function () {\r",
+							"    pm.response.to.have.status(401);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/api/user/profile",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"api",
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check no update w/o auth",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 401\", function () {\r",
+							"    pm.response.to.have.status(401);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"{{user1_email}}\",\r\n    \"firstName\": \"{{user1_firstName}}\",\r\n    \"lastName\": \"{{user1_lastName}}\",\r\n    \"birthDate\": \"1988-01-11\",\r\n    \"phoneNumber\": {{user1_phoneNumber}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/api/user/profile",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"api",
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign in with user1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var jsonResponse = JSON.parse(responseBody);\r",
+							"pm.collectionVariables.set(\"user1_token\", jsonResponse.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "otus-service-user",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "tlDTc1VyLLdXcsreWKSUUlmCg67gUcIh",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "{{user1_username}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{user1_password}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://keycloak.arch.homework/realms/otus/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"keycloak",
+						"arch",
+						"homework"
+					],
+					"path": [
+						"realms",
+						"otus",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user1 profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user1_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"{{user1_email}}_upd\",\r\n    \"firstName\": \"{{user1_firstName}}_upd\",\r\n    \"lastName\": \"{{user1_lastName}}_upd\",\r\n    \"birthDate\": \"1988-01-11\",\r\n    \"phoneNumber\": {{user1_phoneNumber}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/api/user/profile",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"api",
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check user1 profile updated",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Contains valid data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.userName).to.eql(pm.collectionVariables.get(\"user1_username\"));\r",
+							"    pm.expect(jsonData.email).to.eql(pm.collectionVariables.get(\"user1_email\") + \"_upd\");\r",
+							"    pm.expect(jsonData.firstName).to.eql(pm.collectionVariables.get(\"user1_firstName\") + \"_upd\");\r",
+							"    pm.expect(jsonData.lastName).to.eql(pm.collectionVariables.get(\"user1_lastName\") + \"_upd\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user1_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/api/user/profile",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"api",
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register user2",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var rnd = Math.floor((Math.random() * 10000) + 1);\r",
+							"pm.collectionVariables.set(\"user2_username\", \"user\" + rnd);\r",
+							"pm.collectionVariables.set(\"user2_password\",  \"user-pass-\" + rnd);\r",
+							"pm.collectionVariables.set(\"user2_email\", \"user\" + rnd + \"@ya.ru\");\r",
+							"pm.collectionVariables.set(\"user2_firstName\", \"User\" + rnd);\r",
+							"pm.collectionVariables.set(\"user2_lastName\",  \"User\" + rnd + \"sky\");\r",
+							"pm.collectionVariables.set(\"user2_phoneNumber\",  rnd);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"{{user2_email}}\",\r\n    \"userName\": \"{{user2_username}}\",\r\n    \"firstName\": \"{{user2_firstName}}\",\r\n    \"lastName\": \"{{user2_lastName}}\",\r\n    \"birthDate\": \"1988-01-11\",\r\n    \"phoneNumber\": {{user2_phoneNumber}},\r\n    \"password\": \"{{user2_password}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/api/user/register",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"api",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign in with user2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var jsonResponse = JSON.parse(responseBody);\r",
+							"pm.collectionVariables.set(\"user2_token\", jsonResponse.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "otus-service-user",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "tlDTc1VyLLdXcsreWKSUUlmCg67gUcIh",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "{{user2_username}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{user2_password}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://keycloak.arch.homework/realms/otus/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"keycloak",
+						"arch",
+						"homework"
+					],
+					"path": [
+						"realms",
+						"otus",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check user2 sees own profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Contains valid data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.userName).to.eql(pm.collectionVariables.get(\"user2_username\"));\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user2_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/api/user/profile",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"api",
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user2 profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user2_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"{{user2_email}}_upd\",\r\n    \"firstName\": \"{{user2_firstName}}_upd\",\r\n    \"lastName\": \"{{user2_lastName}}_upd\",\r\n    \"birthDate\": \"1988-01-11\",\r\n    \"phoneNumber\": {{user2_phoneNumber}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/api/user/profile",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"api",
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check user2 profile was updated",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Contains valid data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.userName).to.eql(pm.collectionVariables.get(\"user2_username\"));\r",
+							"    pm.expect(jsonData.email).to.eql(pm.collectionVariables.get(\"user2_email\") + \"_upd\");\r",
+							"    pm.expect(jsonData.firstName).to.eql(pm.collectionVariables.get(\"user2_firstName\") + \"_upd\");\r",
+							"    pm.expect(jsonData.lastName).to.eql(pm.collectionVariables.get(\"user2_lastName\") + \"_upd\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user2_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/api/user/profile",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"api",
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check user1 profile was not updated",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Contains valid data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.userName).to.eql(pm.collectionVariables.get(\"user1_username\"));\r",
+							"    pm.expect(jsonData.email).to.eql(pm.collectionVariables.get(\"user1_email\") + \"_upd\");\r",
+							"    pm.expect(jsonData.firstName).to.eql(pm.collectionVariables.get(\"user1_firstName\") + \"_upd\");\r",
+							"    pm.expect(jsonData.lastName).to.eql(pm.collectionVariables.get(\"user1_lastName\") + \"_upd\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user1_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/api/user/profile",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"api",
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "user1_username",
+			"value": ""
+		},
+		{
+			"key": "user1_email",
+			"value": ""
+		},
+		{
+			"key": "user1_firstName",
+			"value": ""
+		},
+		{
+			"key": "user1_lastName",
+			"value": ""
+		},
+		{
+			"key": "user1_phoneNumber",
+			"value": ""
+		},
+		{
+			"key": "user1_password",
+			"value": ""
+		},
+		{
+			"key": "user1_token",
+			"value": ""
+		},
+		{
+			"key": "user2_username",
+			"value": ""
+		},
+		{
+			"key": "user2_password",
+			"value": ""
+		},
+		{
+			"key": "user2_email",
+			"value": ""
+		},
+		{
+			"key": "user2_firstName",
+			"value": ""
+		},
+		{
+			"key": "user2_lastName",
+			"value": ""
+		},
+		{
+			"key": "user2_phoneNumber",
+			"value": ""
+		},
+		{
+			"key": "user2_token",
+			"value": ""
+		}
+	]
+}

@@ -20,7 +20,20 @@ spec:
     spec:
       containers:
         - name: otus-service-user
-          image: auwerk/otus-service-user:v1.0.3
+          image: auwerk/otus-service-user:v1.0.6
+          env:
+            - name: OTUS_KEYCLOAK_URL
+              value: http://keycloak.security
+            - name: OTUS_KEYCLOAK_REALM
+              value: otus
+            - name: OTUS_POSTGRES_HOST
+              value: postgresql.otus-user
+            - name: OTUS_KEYCLOAK_CLIENT_ID
+              value: otus-service-user
+            - name: OTUS_KEYCLOAK_CLIENT_SECRET
+              value: gHJJskTluHrSMF0NUwtdnKT3qehO838O
+            - name: OTUS_USER_PUBLIC_PATH
+              value: /api/user
           ports:
             - name: web
               containerPort: 8080
