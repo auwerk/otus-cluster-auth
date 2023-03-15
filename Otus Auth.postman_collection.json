@@ -51,11 +51,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://arch.homework/api/user/register",
+					"raw": "http://{{baseUrl}}/api/user/register",
 					"protocol": "http",
 					"host": [
-						"arch",
-						"homework"
+						"{{baseUrl}}"
 					],
 					"path": [
 						"api",
@@ -85,11 +84,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://arch.homework/api/user/profile",
+					"raw": "http://{{baseUrl}}/api/user/profile",
 					"protocol": "http",
 					"host": [
-						"arch",
-						"homework"
+						"{{baseUrl}}"
 					],
 					"path": [
 						"api",
@@ -128,11 +126,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://arch.homework/api/user/profile",
+					"raw": "http://{{baseUrl}}/api/user/profile",
 					"protocol": "http",
 					"host": [
-						"arch",
-						"homework"
+						"{{baseUrl}}"
 					],
 					"path": [
 						"api",
@@ -198,12 +195,11 @@
 					]
 				},
 				"url": {
-					"raw": "http://keycloak.arch.homework/realms/otus/protocol/openid-connect/token",
+					"raw": "http://keycloak.{{baseUrl}}/realms/otus/protocol/openid-connect/token",
 					"protocol": "http",
 					"host": [
 						"keycloak",
-						"arch",
-						"homework"
+						"{{baseUrl}}"
 					],
 					"path": [
 						"realms",
@@ -254,11 +250,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://arch.homework/api/user/profile",
+					"raw": "http://{{baseUrl}}/api/user/profile",
 					"protocol": "http",
 					"host": [
-						"arch",
-						"homework"
+						"{{baseUrl}}"
 					],
 					"path": [
 						"api",
@@ -306,11 +301,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://arch.homework/api/user/profile",
+					"raw": "http://{{baseUrl}}/api/user/profile",
 					"protocol": "http",
 					"host": [
-						"arch",
-						"homework"
+						"{{baseUrl}}"
 					],
 					"path": [
 						"api",
@@ -367,11 +361,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://arch.homework/api/user/register",
+					"raw": "http://{{baseUrl}}/api/user/register",
 					"protocol": "http",
 					"host": [
-						"arch",
-						"homework"
+						"{{baseUrl}}"
 					],
 					"path": [
 						"api",
@@ -437,12 +430,11 @@
 					]
 				},
 				"url": {
-					"raw": "http://keycloak.arch.homework/realms/otus/protocol/openid-connect/token",
+					"raw": "http://keycloak.{{baseUrl}}/realms/otus/protocol/openid-connect/token",
 					"protocol": "http",
 					"host": [
 						"keycloak",
-						"arch",
-						"homework"
+						"{{baseUrl}}"
 					],
 					"path": [
 						"realms",
@@ -489,11 +481,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://arch.homework/api/user/profile",
+					"raw": "http://{{baseUrl}}/api/user/profile",
 					"protocol": "http",
 					"host": [
-						"arch",
-						"homework"
+						"{{baseUrl}}"
 					],
 					"path": [
 						"api",
@@ -542,11 +533,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://arch.homework/api/user/profile",
+					"raw": "http://{{baseUrl}}/api/user/profile",
 					"protocol": "http",
 					"host": [
-						"arch",
-						"homework"
+						"{{baseUrl}}"
 					],
 					"path": [
 						"api",
@@ -594,11 +584,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://arch.homework/api/user/profile",
+					"raw": "http://{{baseUrl}}/api/user/profile",
 					"protocol": "http",
 					"host": [
-						"arch",
-						"homework"
+						"{{baseUrl}}"
 					],
 					"path": [
 						"api",
@@ -646,11 +635,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://arch.homework/api/user/profile",
+					"raw": "http://{{baseUrl}}/api/user/profile",
 					"protocol": "http",
 					"host": [
-						"arch",
-						"homework"
+						"{{baseUrl}}"
 					],
 					"path": [
 						"api",
