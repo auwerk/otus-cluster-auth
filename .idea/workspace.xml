@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="418a36da-61a4-4763-91c7-75a314cc0304" name="Changes" comment="oauth2-proxy passes requests with JWT (Authorization Bearer header set)">
+    <list default="true" id="418a36da-61a4-4763-91c7-75a314cc0304" name="Changes" comment="latest updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-account/resources.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-account/resources.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-user/resources.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/resources.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +83,7 @@
       <workItem from="1678866406395" duration="3357000" />
       <workItem from="1678874850283" duration="3000" />
       <workItem from="1678875436811" duration="1478000" />
-      <workItem from="1678882615794" duration="2236000" />
+      <workItem from="1678882615794" duration="4393000" />
     </task>
     <task id="LOCAL-00001" summary="Keycloak behind nginx-ingress">
       <created>1676922457350</created>
@@ -219,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678647559438</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="latest updates">
+      <created>1678884880427</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1678884880427</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,6 +260,7 @@
     <MESSAGE value="Reconfiguration with nginx-ingress, step 1" />
     <MESSAGE value="Reconfiguration with nginx-ingress, step 3 (register API is now public)" />
     <MESSAGE value="oauth2-proxy passes requests with JWT (Authorization Bearer header set)" />
-    <option name="LAST_COMMIT_MESSAGE" value="oauth2-proxy passes requests with JWT (Authorization Bearer header set)" />
+    <MESSAGE value="latest updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="latest updates" />
   </component>
 </project>

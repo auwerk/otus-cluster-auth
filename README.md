@@ -1,5 +1,10 @@
 ## Разворачивание кластера
 
+# /etc/hosts
+Добавить записи:
+- 127.0.0.1 arch.homework
+- 127.0.0.1 keycloak.arch.homework
+
 - Создание пространств имён
 ```shell
 kubectl apply -f ./namespaces.yaml
@@ -21,6 +26,11 @@ helm install nginx-ingress ingress-nginx/ingress-nginx --namespace nginx-ic
 helm install keycloak bitnami/keycloak -f ./keycloak/keycloak-values.yaml --namespace security
 ```
 
+- Импорт realm и клиента в Keycloak
+1. Зайти в консоль администрирования Keycloak (admin/NIMDA после деплоя)
+2. Импортировать realm из ./keycloak/config/realms/otus.json
+3. В импортированный realm импортировать клиент из ./keycloak/config/clients/otus-service-user.json
+
 - Установка oauth2-proxy
 ```shell
 helm install oauth2-proxy oauth2-proxy/oauth2-proxy -f ./oauth2-proxy/oauth2-proxy-values.yaml --namespace rev-proxy
@@ -40,6 +50,6 @@ kubectl apply -f ./service-user/ingress.yaml
 
 - Установка UI:
 ```shell
-kubectl apply -f ./frontend-user/resources.yaml
-kubectl apply -f ./frontend-user/ingress.yaml
+kubectl apply -f ./frontend-account/resources.yaml
+kubectl apply -f ./frontend-account/ingress.yaml
 ```
