@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="418a36da-61a4-4763-91c7-75a314cc0304" name="Changes" comment="latest updates">
+    <list default="true" id="418a36da-61a4-4763-91c7-75a314cc0304" name="Changes" comment="README updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -83,7 +83,7 @@
       <workItem from="1678866406395" duration="3357000" />
       <workItem from="1678874850283" duration="3000" />
       <workItem from="1678875436811" duration="1478000" />
-      <workItem from="1678882615794" duration="4393000" />
+      <workItem from="1678882615794" duration="4469000" />
     </task>
     <task id="LOCAL-00001" summary="Keycloak behind nginx-ingress">
       <created>1676922457350</created>
@@ -225,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678884880427</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="README updates">
+      <created>1678888757511</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1678888757511</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,6 +268,7 @@
     <MESSAGE value="Reconfiguration with nginx-ingress, step 3 (register API is now public)" />
     <MESSAGE value="oauth2-proxy passes requests with JWT (Authorization Bearer header set)" />
     <MESSAGE value="latest updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="latest updates" />
+    <MESSAGE value="README updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="README updates" />
   </component>
 </project>
