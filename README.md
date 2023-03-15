@@ -1,3 +1,5 @@
+![Architecture](cluster.png)
+
 ## Сервисы
 - [otus-service-user](https://github.com/auwerk/otus-service-user)
 - [otus-frontend-account](https://github.com/auwerk/otus-frontend-account)
