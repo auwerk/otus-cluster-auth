@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="418a36da-61a4-4763-91c7-75a314cc0304" name="Changes" comment="README updates">
+      <change afterPath="$PROJECT_DIR$/frontend-public/ingress.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-public/resources.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cluster.dia" beforeDir="false" afterPath="$PROJECT_DIR$/cluster.dia" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cluster.png" beforeDir="false" afterPath="$PROJECT_DIR$/cluster.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +43,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Devel/Otus/otus-cluster/helm-charts/demo-service/templates/deployment.yaml",
+    "last_opened_file_path": "C:/Devel/Otus/otus-cluster-auth/frontend-public",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -49,6 +53,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Devel\Otus\otus-cluster-auth\frontend-public" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -83,7 +92,8 @@
       <workItem from="1678866406395" duration="3357000" />
       <workItem from="1678874850283" duration="3000" />
       <workItem from="1678875436811" duration="1478000" />
-      <workItem from="1678882615794" duration="4469000" />
+      <workItem from="1678882615794" duration="6441000" />
+      <workItem from="1678892889772" duration="1074000" />
     </task>
     <task id="LOCAL-00001" summary="Keycloak behind nginx-ingress">
       <created>1676922457350</created>
@@ -232,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678888757511</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="README updates">
+      <created>1678888821912</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1678888821912</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

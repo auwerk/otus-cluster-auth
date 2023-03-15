@@ -1,3 +1,8 @@
+## Сервисы
+- [otus-service-user](https://github.com/auwerk/otus-service-user)
+- [otus-frontend-account](https://github.com/auwerk/otus-frontend-account)
+- [otus-frontend-public](https://github.com/auwerk/otus-frontend-public)
+
 ## Настройка /etc/hosts
 Добавить записи:
 - 127.0.0.1 arch.homework
@@ -52,4 +57,6 @@ kubectl apply -f ./service-user/ingress.yaml
 ```shell
 kubectl apply -f ./frontend-account/resources.yaml
 kubectl apply -f ./frontend-account/ingress.yaml
+kubectl apply -f ./frontend-public/resources.yaml
+kubectl apply -f ./frontend-public/ingress.yaml
 ```

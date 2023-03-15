@@ -1,0 +1,19 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: otus-user
+  name: otus-frontend-public
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: arch.homework
+      http:
+        paths:
+          - backend:
+              service:
+                name: otus-frontend-public
+                port:
+                  name: http
+            pathType: Prefix
+            path: /
